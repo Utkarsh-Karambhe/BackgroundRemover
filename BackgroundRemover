@@ -1,0 +1,18 @@
+import rembg
+from rembg import remove
+from PIL import Image
+
+downloads_folder = "/Users/uk/Downloads"
+image_name = "abc.jpeg"
+input_path = f"{downloads_folder}/{image_name}"
+image_input = Image.open(input_path)
+
+output = remove(image_input)
+
+downloads_folder = "/Users/uk/Downloads"
+image_name = "abcd.jpeg"
+output_path = f"{downloads_folder}/{image_name}"
+
+# Convert the image to RGB mode before saving
+output = output.convert("RGB")
+output.save(output_path)
